@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module Cours</title>
+</head>
+<body>
+  {% if cours %}
+    <h1>Cours</h1>
+    <ul>
+      {% for theCours in cours %}
+        <li style="margin-bottom: 10px;">
+          <a style="text-decoration: none;" href="/cours/show/{{ theCours.id }}">{{ theCours.nom }}</a>
+          <button><a style="text-decoration: none;" href="/cours/delete/{{ theCours.id }}">x</a></button>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
